@@ -6,11 +6,13 @@
           <button class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i>
           </button>
         </span>
+        <!-- ng-model chains the -->
 <input type="text" class="form-control" placeholder="Search for..." ng-model="searchText">
 
       </div>
     </div>
   </div>   
+  <!-- "thingy" here stands for the item within items route that is defined in the app.js -->
 <div ng-repeat="thingy in items | filter: searchText">
     <div class="panel panel-default">
       <div class="panel panel-body">

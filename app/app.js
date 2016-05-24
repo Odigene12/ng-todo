@@ -1,5 +1,6 @@
 var app = angular.module("TodoApp", ["ngRoute"]);
 
+// Setting up your url files
 app.config(function($routeProvider){
 	$routeProvider.
 	when('/items/list', {
