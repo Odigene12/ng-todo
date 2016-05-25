@@ -17,6 +17,7 @@
     <div class="panel panel-default">
       <div class="panel panel-body">
       <div class="col-xs-1"><input type="checkbox" name=""/></div>
+      <!-- the ng-href allows you to use the "thingy.id" after it has been loaded instead of before which would happen with "href" -->
       <div class="col-xs-7"><a ng-href="#/items/{{thingy.id}}">{{thingy.task}}</a></div>
       <div class="col-xs-2">{{thingy.dueDate}}</div>
       <div class="col-xs-1">{{thingy.assignedTo}}</div>
