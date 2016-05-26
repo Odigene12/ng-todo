@@ -1,4 +1,5 @@
-var app = angular.module("TodoApp", ["ngRoute"]);
+var app = angular.module("TodoApp", ["ngRoute"]) 
+.constant("firebaseURL","https://todo-angularapp.firebaseio.com/");
 
 // Setting up your url files
 app.config(function($routeProvider){

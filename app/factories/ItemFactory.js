@@ -1,11 +1,10 @@
-"use strict"
-app.factory("itemStorage", function($q, $http){
+app.factory("itemStorage", function($q, $http, firebaseURL){
 
 // this function is here in order to allow you to get the information from firebase instead of the json so that you can play around with the array if necessary.
 	var getItemList = function(){
-		let items = []
+		var items = []
 		return $q(function(resolve, reject){
-			$http.get("https://todo-angularapp.firebaseio.com/items.json")
+			$http.get(firebaseURL + "items.json")
 				.success(function(itemObject){
 					var itemCollection = itemObject; 
 					// this is looping through array of objects that it got from firebase through the item0 and so on and extracting each object.
@@ -26,7 +25,7 @@ app.factory("itemStorage", function($q, $http){
 	var deleteItem = function(itemId){
 		return $q(function(resolve, reject){
 			$http
-				.delete("https://todo-angularapp.firebaseio.com/items/"+itemId+".json")
+				.delete(firebaseURL + "items/"+itemId+".json")
 				.success(function(objectFromFirebase){
 					resolve(objectFromFirebase)
 				})
@@ -37,7 +36,7 @@ app.factory("itemStorage", function($q, $http){
 	var postNewItem = function(newItem){
 		return $q(function(resolve, reject){
 				$http.post(
-					"https://todo-angularapp.firebaseio.com/items.json",
+					firebaseURL + "items.json",
 					JSON.stringify({
 						// you use "newItem" because that is what is being passed in instead of "$scope"
 						assignedTo: newItem.assignedTo,

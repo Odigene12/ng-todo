@@ -4,5 +4,11 @@ body {
 h1 {
   text-align: center; }
 
+h2 {
+  text-align: center; }
+
 .main-container {
   border: 2px dashed red; }
+
+.search-bar-spacing {
+  margin-bottom: 20px; }
