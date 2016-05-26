@@ -1,6 +1,6 @@
 <h1>{{selectedItem.task}}</h1>
 
-<button class="btn btn-info">Edit</button>
+<button class="btn btn-info"><a ng-href="#/items/{{selectedItem.id}}/edit">Edit</a></button>
 
 <h2>Is it Completed?: {{(selectedItem.isCompleted ? "yes": "no")}}</h2>
 <h2>Location: {{selectedItem.location}}</h2>
