@@ -12,6 +12,8 @@
     </div>
   </div>
 </div>   
+
+<h3>In Progress</h3>
 <div class="panel panel-default">
   <div class="panel panel-body">
     <div class="col-xs-1"></div>
@@ -24,9 +26,9 @@
 
 <!-- "thingy" here stands for the item within items route that is defined in the app.js -->
 <div ng-repeat="thingy in items | filter: searchText">
-  <div class="panel panel-default">
+  <div class="panel panel-default" ng-hide="thingy.isCompleted">
     <div class="panel panel-body">
-      <div class="col-xs-1"><input type="checkbox" name=""/></div>
+      <div class="col-xs-1"><input type="checkbox" ng-model= "thingy.isCompleted" ng-change="inputChange(thingy)"/></div>
       <!-- the ng-href allows you to use the "thingy.id" after it has been loaded instead of before which would happen with "href" -->
       <div class="col-xs-7"><a ng-href="#/items/{{thingy.id}}">{{thingy.task}}</a></div>
       <div class="col-xs-2">{{thingy.dueDate}}</div>
@@ -36,6 +38,29 @@
     </div>
   </div>
 
+<h3>Completed</h3>
+<div class="panel panel-default">
+  <div class="panel panel-body">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-7">Task</div>
+    <div class="col-xs-2">Due Date</div>
+    <div class="col-xs-1">Assigned To</div>
+    <div class="col-xs-1"></div>
+  </div>
+</div>
+
+<!-- "thingy" here stands for the item within items route that is defined in the app.js -->
+<div ng-repeat="thingy in items | filter: {isCompleted: true}">
+  <div class="panel panel-default">
+    <div class="panel panel-body">
+      <div class="col-xs-1"><input type="checkbox" ng-model= "thingy.isCompleted" ng-change="inputChange(thingy)"/></div>
+      <!-- the ng-href allows you to use the "thingy.id" after it has been loaded instead of before which would happen with "href" -->
+      <div class="col-xs-7"><a ng-href="#/items/{{thingy.id}}">{{thingy.task}}</a></div>
+      <div class="col-xs-2">{{thingy.dueDate}}</div>
+      <div class="col-xs-1">{{thingy.assignedTo}}</div>
+      <div class="col-xs-1"></div>
+    </div>
+  </div>
 
 
 </div>

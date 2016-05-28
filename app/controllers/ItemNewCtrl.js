@@ -1,5 +1,7 @@
 app.controller("ItemNewCtrl", function($scope, $location, itemStorage){
 	// $location is used to change url
+	$scope.title = "New Item";
+	$scope.submitButtonText = "Add New Item";
 
 	$scope.newTask = {
 		assignedTo: "",
@@ -8,7 +10,8 @@ app.controller("ItemNewCtrl", function($scope, $location, itemStorage){
 		isCompleted: false,
 		location: "",
 		task: "",
-		urgency: ""
+		urgency: "",
+		uid: ""
 	};	
 
 
