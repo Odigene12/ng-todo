@@ -15,6 +15,7 @@
     "angular": "^1.5.5",
     "jquery": "^2.2.3",
     "bootstrap": "^3.3.6",
-    "angular-route": "^1.5.5"
+    "angular-route": "^1.5.5",
+    "angularfire": "^1.2.0"
   }
 }

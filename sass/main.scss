@@ -16,7 +16,7 @@ h2 {
 
 
 .main-container {
-	border: 2px dashed $red;
+	
 }
 
 @mixin border-radius($radius) {
@@ -25,3 +25,8 @@ h2 {
 	 -ms-border-radius:  $radius;
 		 border-radius:  $radius;
 }
+
+.search-bar-spacing {
+	margin-bottom: 20px;
+}
+
